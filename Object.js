@@ -39,4 +39,21 @@ function printPlayerName(num,player){
 printPlayerName(1,playerOne);
 printPlayerName(2,playerTwo);
 
-      
+//Object Constructor
+console.log("---Object Constructor---");
+// Use when to create multiple objects with the same properties
+// Avoids having to manually create each object like above: PlayerOne and PlayerTwo
+// just create objects with constructor function.
+
+function Player(firstName,lastName,marker){ //constructor function
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.marker=marker;
+    this.sayFullName=function(){ // we can add function inside constructor function
+        console.log("My name is ",this.firstName," ",this.lastName);
+    };
+};
+
+const playerThree= new Player("Siti","Suraiya","S");
+console.log("1/ ",playerThree.firstName,"marker is ",playerThree.marker); 
+playerThree.sayFullName();
